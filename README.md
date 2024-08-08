@@ -1,6 +1,6 @@
 # Sistema de Gestão de Biblioteca
 
-Este projeto implementa um sistema de gestão de biblioteca utilizando SQL. Inclui funcionalidades para gerenciar livros, membros, empréstimos e devoluções, conteudos adiquiridos durante meus estudos de BD, graduação e o PDF "introdução a linguagem SQL" <https://sites.ffclrp.usp.br/cid/docentes/edberto/Apostilas/Apostila%20SQL.pdf>
+Este projeto implementa um sistema de gestão de biblioteca utilizando SQL. Inclui funcionalidades para gerenciar livros, membros, empréstimos e devoluções. Desenvolvido a partir dos conhecimentos adquiridos durante meus estudos de BD, graduação e o PDF "introdução a linguagem SQL" <https://sites.ffclrp.usp.br/cid/docentes/edberto/Apostilas/Apostila%20SQL.pdf>
 
 ## Funcionalidades
 
