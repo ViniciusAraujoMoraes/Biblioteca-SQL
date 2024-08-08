@@ -1,0 +1,37 @@
+CREATE TABLE Livros (
+    LivroID INT PRIMARY KEY,
+    Titulo VARCHAR(100),
+    Autor VARCHAR(100),
+    AnoPublicacao INT,
+    Disponivel BOOLEAN
+);
+
+CREATE TABLE Membros (
+    MembroID INT PRIMARY KEY,
+    Nome VARCHAR(100),
+    DataCadastro DATE
+);
+
+CREATE TABLE Emprestimos (
+    EmprestimoID INT PRIMARY KEY,
+    LivroID INT,
+    MembroID INT,
+    DataEmprestimo DATE,
+    DataDevolucao DATE,
+    FOREIGN KEY (LivroID) REFERENCES Livros(LivroID),
+    FOREIGN KEY (MembroID) REFERENCES Membros(MembroID)
+);
+
+CREATE OR REPLACE PROCEDURE RegistrarEmprestimo(
+    p_LivroID INT,
+    p_MembroID INT
+) IS
+BEGIN
+    INSERT INTO Emprestimos (EmprestimoID, LivroID, MembroID, DataEmprestimo)
+    VALUES (seq_emprestimos.NEXTVAL, p_LivroID, p_MembroID, SYSDATE);
+    
+    UPDATE Livros
+    SET Disponivel = FALSE
+    WHERE LivroID = p_LivroID;
+END;
+/
